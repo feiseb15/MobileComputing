@@ -22,28 +22,39 @@ public class MainActivity extends Activity {
 
     public void onClick(View view)
     {
-        double o1,o2,r;
-        o1 = Double.parseDouble(etOperand1.getText().toString());
-        o2 = Double.parseDouble(etOperand2.getText().toString());
-        switch(view.getId())
-        {
-            case R.id.btPlus:
-                r=o1+o2;
-                break;
-            case R.id.btMinus:
-                r=o1-o2;
-                break;
-            case R.id.btMultiplizieren:
-                r=o1*o2;
-                break;
-            case R.id.btDividieren:
-                r=o1/o2;
-                break;
+        try {
+            double o1, o2, r;
 
-            default:
-                r=0;
-                break;
+
+            o1 = Double.parseDouble(etOperand1.getText().toString());
+            o2 = Double.parseDouble(etOperand2.getText().toString());
+            switch (view.getId()) {
+                case R.id.btPlus:
+                    r = o1 + o2;
+                    break;
+                case R.id.btMinus:
+                    r = o1 - o2;
+                    break;
+                case R.id.btMultiplizieren:
+                    r = o1 * o2;
+                    break;
+                case R.id.btDividieren:
+                    r = o1 / o2;
+                    break;
+                case R.id.btHoch:
+                    r = Math.pow(o1, o2);
+                    break;
+
+                default:
+                    r = 0;
+                    break;
+            }
+
+            etErgebnis.setText("" + r);
+
+        }catch (Exception ex)
+        {
+            etErgebnis.setText("Bitte Zahlenwerte eingeben");
         }
-        etErgebnis.setText(""+r);
     }
 }
