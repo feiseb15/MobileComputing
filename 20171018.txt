@@ -1,0 +1,8 @@
+Padding ... inside the border
+Margin ... utside the border
+
+Linearlayout Elemente horizontal oder vertikal anordnen
+
+android:orientation="horizontal"
+
+android:orientation="vertical"
